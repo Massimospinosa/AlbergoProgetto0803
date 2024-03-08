@@ -1,0 +1,20 @@
+﻿@model Albergo.Models.Prenotazione
+
+<div>
+    <h2>Dettagli Prenotazione</h2>
+    <p>Numero Camera: @Model.NumeroCamera</p>
+    <p>Data Prenotazione: @Model.DataPrenotazione</p>
+    <p>Tariffa: @Model.Tariffa</p>
+    <!-- Aggiungi altre informazioni della prenotazione qui -->
+</div>
+
+@if (Model.ServiziAggiuntivi != null && Model.ServiziAggiuntivi.Any())
+{
+    <h3>Servizi Aggiuntivi</h3>
+    <ul>
+        @foreach (var servizio in Model.ServiziAggiuntivi)
+        {
+            <li>@servizio.Tipo - @servizio.Quantità - @servizio.Prezzo</li>
+        }
+    </ul>
+}

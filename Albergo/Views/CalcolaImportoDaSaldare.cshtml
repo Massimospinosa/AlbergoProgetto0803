@@ -1,0 +1,9 @@
+﻿@model Albergo.Models.Prenotazione
+
+<div>
+    <h2>Importo da Saldare</h2>
+    <p>Tariffa: @Model.Tariffa</p>
+    <p>Caparra: @Model.Caparra</p>
+    <!-- Mostra qui la somma di tutti i servizi aggiuntivi -->
+    <p>Importo Totale: @(Model.Tariffa - Model.Caparra + Model.ServiziAggiuntivi.Sum(s => s.Prezzo))</p>
+</div>
